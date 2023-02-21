@@ -5,7 +5,8 @@ import time
 
 app = Flask(__name__)
 
-client = MongoClient('0.0.0.0', 'PORT')
+railway = "mongodb://mongo:qrFiSNz1reAdy9LNpBaj@containers-us-west-89.railway.app:7218"
+client = MongoClient(railway)
 
 db = client.flask_db
 todos = db.todos
