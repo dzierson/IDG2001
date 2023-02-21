@@ -1,8 +1,14 @@
-from flask import Flask, jsonify
+from flask import Flask
+from pymongo import MongoClient
 import os
 import time
 
 app = Flask(__name__)
+
+client = MongoClient('0.0.0.0', 'PORT')
+
+db = client.flask_db
+todos = db.todos
 
 @app.route("/")
 def hello_world():
