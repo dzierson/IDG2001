@@ -1,15 +1,11 @@
 from flask import Flask
-from pymongo import MongoClient
+from flask_pymongo import PyMongo
 import os
 import time
 
 app = Flask(__name__)
-
-railway = "mongodb://mongo:qrFiSNz1reAdy9LNpBaj@containers-us-west-89.railway.app:7218"
-client = MongoClient(railway)
-
-db = client.flask_db
-todos = db.todos
+app.config["MONGO_URI"] = "mongodb://mongo:qrFiSNz1reAdy9LNpBaj@containers-us-west-89.railway.app:7218"
+mongo = PyMongo(app)
 
 @app.route("/")
 def hello_world():
