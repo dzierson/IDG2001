@@ -10,4 +10,4 @@ def hello_world():
     time.sleep(5)
 
 if __name__ == '__main__':
-    app.run(host="0.0.0.0:$PORT")
+    app.run(host="0.0.0.0")
